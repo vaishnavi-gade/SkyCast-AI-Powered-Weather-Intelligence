@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast | Premium Weather Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+
+  <div id="alertBanner" class="alert-banner hidden">
+    <span id="alertMessage"></span>
+    <button onclick="closeAlert()">✖</button>
+  </div>
+
+  <div class="app-wrapper">
+
+    <header class="app-header">
+      <h1>SkyCast</h1>
+      <p class="subtitle">AI-Powered Weather Intelligence</p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Search city...">
+      <button class="primary-btn" onclick="getWeather()">Search</button>
+      <button class="icon-btn" onclick="useVoiceInput()">🎤</button>
+      <button class="icon-btn" onclick="getWeatherByLocation()">📍</button>
+    </div>
+
+    <section class="weather-card" id="weatherResult"></section>
+    <section class="forecast-section" id="forecastResult"></section>
+
+    <section class="chart-section">
+      <canvas id="tempChart"></canvas>
+    </section>
+
+    <section class="insight-section" id="weatherInsight"></section>
+
+  </div>
+
+  <script src="weather.js"></script>
+</body>
+</html>
